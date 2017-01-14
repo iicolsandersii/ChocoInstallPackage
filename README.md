@@ -2,7 +2,7 @@
 
 Usage: powershell -exectutionpolicy bypass ".\ChocoInstallPackage.ps1 packagename" 
 
-This script accespts as many chocolately package names seperated with a single space "example: flashplayer googlechrome".
+This script accepts as many chocolately package names seperated with a single space "example: flashplayer googlechrome".
 
 It will query the computer to make sure chocolatey is installed first, and if it isn't it will automatically install version vz0.10.3.
 
