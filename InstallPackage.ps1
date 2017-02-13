@@ -17,7 +17,7 @@ try
     if (!$ChocoInstalled)
     {
         #install choco
-        iex ((new-object net.webclient).DownloadString("https://chocolatey.org/install.ps1"))    
+        iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex   
     
         #adds your local package source
         #&choco source add -n=server-name -s "http://server-name/chocolatey" -y
@@ -29,13 +29,13 @@ try
     else
     {
         #upgrading Choco
-        &choco upgrade chocolatey -y -f
+        &choco upgrade chocolatey -y --version 0.10.3
     }
 
-    #install the applications
+    #install the applications (will upgrade existing package, otherwise will install)
     foreach ($package in $packages)
     {
-        &choco install $package -y -f
+        &choco upgrade $package -y -f
     }
 }
 catch
