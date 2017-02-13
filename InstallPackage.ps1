@@ -17,13 +17,13 @@ try
     if (!$ChocoInstalled)
     {
         #install choco
-        iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex   
-    
-        #adds your local package source
-        #&choco source add -n=server-name -s "http://server-name/chocolatey" -y
+        iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 
         #re-readfresh environmental variables
-        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")     
+        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+        
+        #adds your local package source
+        #&choco source add -n=server-name -s "http://server-name/chocolatey" -y
     }
     #Since choco is installed, lets update choco
     else
