@@ -25,7 +25,7 @@ try
         $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
         #adds our local package source
-        &choco source add -n=chocv-sa-ap01 -s "http://chocv-sa-ap01/chocolatey"
+        #&choco source add -n=server-name -s "http://server-name/chocolatey" -y
     }
 
         #install the applications (will upgrade existing package, otherwise will install)
