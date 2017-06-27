@@ -29,13 +29,13 @@ try
     else
     {
         #upgrading Choco
-        &choco upgrade chocolatey -y --version 0.10.3
+        &cup chocolatey -y
     }
 
     #install the applications (will upgrade existing package, otherwise will install)
     foreach ($package in $packages)
     {
-        &choco upgrade $package -y -f
+        &cup $package -y
     }
 }
 catch
