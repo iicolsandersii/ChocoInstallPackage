@@ -34,7 +34,7 @@ try
         #message back to LANDesk Core
         &"${env:ProgramFiles(x86)}\LANDesk\LDClient\SDCLIENT.EXE" /msg="Installing $package..."
 
-        &cup $package -y -f
+        &cup $package -y
 
         #message back to LANDesk Core
         &"${env:ProgramFiles(x86)}\LANDesk\LDClient\SDCLIENT.EXE" /msg="$package installation success!"
